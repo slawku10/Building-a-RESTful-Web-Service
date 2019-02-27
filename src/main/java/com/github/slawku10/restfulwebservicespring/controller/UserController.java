@@ -5,10 +5,7 @@ import com.github.slawku10.restfulwebservicespring.service.UserService;
 import com.github.slawku10.restfulwebservicespring.domain.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -29,19 +26,13 @@ public class UserController {
     }
 
     @RequestMapping(value = "/create-new-user", method = RequestMethod.POST)
-    public List<User> createNewUser(@RequestParam(value = "id") Integer id, @RequestParam(value = "name") String name,
-                                    @RequestParam(value = "lastName") String lastName,
-                                    @RequestParam(value = "country") String country) {
-        User newUser = new User(id, name, lastName, country);
+    public @ResponseBody List<User> createNewUser(@RequestBody User newUser) {
         userService.createNewUser(newUser);
         return getAll();
     }
 
     @RequestMapping(value = "/update-user", method = RequestMethod.PUT)
-    public List<User> updateUser(@RequestParam(value = "id") Integer id, @RequestParam(value = "name") String name,
-                                 @RequestParam(value = "lastName") String lastName,
-                                 @RequestParam(value = "country") String country){
-        User updaterUser = new User(id, name, lastName, country);
+    public @ResponseBody List<User> updateUser(@RequestBody User updaterUser){
         userService.updateUser(updaterUser);
         return getAll();
     }
