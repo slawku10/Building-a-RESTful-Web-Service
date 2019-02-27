@@ -1,4 +1,4 @@
-package hello;
+package com.github.slawku10.restfulwebservicespring.hello;
 
 public class Greeting {
     private final long id;

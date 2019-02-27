@@ -1,4 +1,4 @@
-package hello;
+package com.github.slawku10.restfulwebservicespring.hello;
 
 
 import org.springframework.stereotype.Controller;
@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.concurrent.atomic.AtomicLong;
 
-@Controller
+@RestController
 public class GreetingController {
 
     private static final String template = "Hello, %s!";
