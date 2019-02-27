@@ -1,0 +1,15 @@
+the Project is available on the site: https://enigmatic-cliffs-19855.herokuapp.com
+
+ENDPOINTS:
+
+GET:
+https://enigmatic-cliffs-19855.herokuapp.com/all
+
+POST:
+https://enigmatic-cliffs-19855.herokuapp.com/create-new-user?id=&name=&lastName=&country=
+
+PUT:
+https://enigmatic-cliffs-19855.herokuapp.com/update-user?id=&name=&=s&country=
+
+DELETE:
+https://enigmatic-cliffs-19855.herokuapp.com/delete-user?id=
