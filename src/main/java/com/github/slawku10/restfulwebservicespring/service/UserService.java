@@ -1,4 +1,4 @@
-package com.github.slawku10.restfulwebservicespring.UserService;
+package com.github.slawku10.restfulwebservicespring.service;
 
 import com.github.slawku10.restfulwebservicespring.domain.User;
 import com.github.slawku10.restfulwebservicespring.domain.repository.UserRepository;
