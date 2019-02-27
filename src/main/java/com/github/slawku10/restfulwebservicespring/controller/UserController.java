@@ -15,30 +15,32 @@ public class UserController {
     @Autowired
     UserService userService;
 
-    @RequestMapping(value = "/all", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(value = "/all", produces = MediaType.APPLICATION_JSON_VALUE)
     public List<User> getAll() {
         return userService.getAll();
     }
 
-    @RequestMapping(value = "/", method = RequestMethod.GET)
+    @GetMapping(value = "/")
     public User getUser(@RequestParam(value = "id") Integer id) {
         return userService.get(id);
     }
 
-    @RequestMapping(value = "/create-new-user", method = RequestMethod.POST)
-    public @ResponseBody List<User> createNewUser(@RequestBody User newUser) {
+    @PostMapping(value = "/create-new-user")
+    public @ResponseBody
+    List<User> createNewUser(@RequestBody User newUser) {
         userService.createNewUser(newUser);
         return getAll();
     }
 
-    @RequestMapping(value = "/update-user", method = RequestMethod.PUT)
-    public @ResponseBody List<User> updateUser(@RequestBody User updaterUser){
+    @PutMapping(value = "/update-user")
+    public @ResponseBody
+    List<User> updateUser(@RequestBody User updaterUser) {
         userService.updateUser(updaterUser);
         return getAll();
     }
 
-    @RequestMapping(value = "/delete-user", method = RequestMethod.DELETE)
-    public List<User> deleteUser(@RequestParam(value = "id") Integer id){
+    @DeleteMapping(value = "/delete-user")
+    public List<User> deleteUser(@RequestParam(value = "id") Integer id) {
         userService.delete(id);
         return getAll();
     }
