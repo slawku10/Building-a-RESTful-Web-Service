@@ -40,7 +40,7 @@ public class UserController {
     }
 
     @DeleteMapping(value = "/delete-user")
-    public List<User> deleteUser(@RequestParam(value = "id") Integer id) {
+    public @ResponseBody List<User> deleteUser(@RequestParam(value = "id") Integer id) {
         userService.delete(id);
         return getAll();
     }
